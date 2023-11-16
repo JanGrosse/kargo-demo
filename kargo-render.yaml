@@ -1,0 +1,10 @@
+configVersion: v1alpha1
+branchConfigs:
+- pattern: stage/(\w+)
+  appConfigs:
+    kargoDemo:
+      configManagement:
+        kustomize:
+          path: stages/${1}
+      outputPath: app
+      combineManifests: false
